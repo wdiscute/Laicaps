@@ -2,9 +2,11 @@ package com.wdiscute.laicaps.block;
 
 import com.wdiscute.laicaps.Laicaps;
 import com.wdiscute.laicaps.item.ModItems;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -37,7 +39,22 @@ public class ModBlocks
                             .requiresCorrectToolForDrops()
                             .strength(0.2f, 4f)
                             .sound(SoundType.BONE_BLOCK)
+                    )
+            );
 
+    public static final RegistryObject<Block> RALEXENDRITE_ORE =
+            registryObject("alexandrite_ore", () ->
+                    new DropExperienceBlock(UniformInt.of(2, 4),BlockBehaviour.Properties.of()
+                            .requiresCorrectToolForDrops()
+                            .strength(4f, 6f)
+                    )
+            );
+
+    public static final RegistryObject<Block> RALEXENDRITE_DEEPSLATE_ORE =
+            registryObject("alexandrite_deepslate_ore", () ->
+                    new DropExperienceBlock(UniformInt.of(2, 4),BlockBehaviour.Properties.of()
+                            .requiresCorrectToolForDrops()
+                            .strength(5f, 7f)
                     )
             );
 

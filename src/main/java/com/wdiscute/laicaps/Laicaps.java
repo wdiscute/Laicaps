@@ -2,6 +2,7 @@ package com.wdiscute.laicaps;
 
 import com.mojang.logging.LogUtils;
 import com.wdiscute.laicaps.block.ModBlocks;
+import com.wdiscute.laicaps.item.ModCreativeModeTabs;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -31,14 +32,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-//very important comment
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Laicaps.MOD_ID)
 public class Laicaps
 {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "laicaps";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public Laicaps()
@@ -48,6 +46,8 @@ public class Laicaps
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -70,6 +70,7 @@ public class Laicaps
     {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.ALEXANDRITE);
+            event.accept(ModItems.RAW_ALEXANDRITE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){

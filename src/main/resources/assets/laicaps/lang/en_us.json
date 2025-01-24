@@ -1,5 +1,7 @@
 {
   "item.laicaps.alexandrite": "Alexandrite",
+  "item.laicaps.raw_alexandrite": "Raw Alexandrite",
   "block.laicaps.alexandrite_block": "Block of Alexandrite",
-  "block.laicaps.raw_alexandrite_block": "Block of Raw Alexandrite"
+  "block.laicaps.raw_alexandrite_block": "Block of Raw Alexandrite",
+  "creativetab.laicaps.alexandrite_items": "Alexandrite"
 }
