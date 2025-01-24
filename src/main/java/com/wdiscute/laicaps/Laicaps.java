@@ -1,6 +1,7 @@
 package com.wdiscute.laicaps;
 
 import com.mojang.logging.LogUtils;
+import com.wdiscute.laicaps.block.ModBlocks;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -49,6 +50,7 @@ public class Laicaps
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -69,6 +71,12 @@ public class Laicaps
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.ALEXANDRITE);
         }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
+            event.accept(ModBlocks.ALEXENDRITE_BLOCK);
+            event.accept(ModBlocks.RAW_ALEXENDRITE_BLOCK);
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
