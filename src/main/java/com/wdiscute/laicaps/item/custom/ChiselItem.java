@@ -14,8 +14,7 @@ import net.minecraft.world.level.block.Blocks;
 
 import java.util.Map;
 
-public class ChiselItem extends Item
-{
+public class ChiselItem extends Item {
 
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
@@ -37,40 +36,35 @@ public class ChiselItem extends Item
         Block clickedBlock = level.getBlockState(pContext.getClickedPos()).getBlock();
 
         //if(CHISEL_MAP.containsKey(clickedBlock) && pContext.getPlayer().isCrouching())
-        if(true)
-        {
-            if(!level.isClientSide()){
 
-                //level.setBlockAndUpdate(pContext.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
-                //pContext.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) pContext.getPlayer()),
-                //        item -> pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
-                //level.playSound(null, pContext.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+        if (!level.isClientSide()) {
 
-                ItemStack offhanditemstack = pContext.getPlayer().getOffhandItem();
-                if (offhanditemstack.isEmpty()) return InteractionResult.FAIL;
+            //level.setBlockAndUpdate(pContext.getClickedPos(), CHISEL_MAP.get(clickedBlock).defaultBlockState());
+            //pContext.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), ((ServerPlayer) pContext.getPlayer()),
+            //        item -> pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+            //level.playSound(null, pContext.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
 
-                if(offhanditemstack.getItem() instanceof BlockItem)
-                {
-                    Block block = ((BlockItem) offhanditemstack.getItem()).getBlock();
-                    level.setBlockAndUpdate(pContext.getClickedPos(), block.defaultBlockState());
-                    return InteractionResult.SUCCESS;
-                }
+            ItemStack offhanditemstack = pContext.getPlayer().getOffhandItem();
+            if (offhanditemstack.isEmpty()) return InteractionResult.FAIL;
 
-                if(offhanditemstack.getItem() == Items.WATER_BUCKET)
-                {
-                    level.setBlockAndUpdate(pContext.getClickedPos(), Blocks.WATER.defaultBlockState());
-                    return InteractionResult.SUCCESS;
-                }
+            if (offhanditemstack.getItem() instanceof BlockItem) {
+                Block block = ((BlockItem) offhanditemstack.getItem()).getBlock();
+                level.setBlockAndUpdate(pContext.getClickedPos(), block.defaultBlockState());
+                return InteractionResult.SUCCESS;
+            }
 
-                if(offhanditemstack.getItem() == Items.LAVA_BUCKET)
-                {
-                    level.setBlockAndUpdate(pContext.getClickedPos(), Blocks.LAVA.defaultBlockState());
-                    return InteractionResult.SUCCESS;
-                }
+            if (offhanditemstack.getItem() == Items.WATER_BUCKET) {
+                level.setBlockAndUpdate(pContext.getClickedPos(), Blocks.WATER.defaultBlockState());
+                return InteractionResult.SUCCESS;
+            }
 
+            if (offhanditemstack.getItem() == Items.LAVA_BUCKET) {
+                level.setBlockAndUpdate(pContext.getClickedPos(), Blocks.LAVA.defaultBlockState());
+                return InteractionResult.SUCCESS;
             }
 
         }
+
 
         return InteractionResult.FAIL;
     }

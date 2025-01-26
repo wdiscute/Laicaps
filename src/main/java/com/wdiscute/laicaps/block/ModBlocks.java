@@ -1,6 +1,7 @@
 package com.wdiscute.laicaps.block;
 
 import com.wdiscute.laicaps.Laicaps;
+import com.wdiscute.laicaps.block.custom.MagicBlock;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -54,6 +55,14 @@ public class ModBlocks
                     new DropExperienceBlock(UniformInt.of(2, 4),BlockBehaviour.Properties.of()
                             .requiresCorrectToolForDrops()
                             .strength(5f, 7f)
+                    )
+            );
+
+    public static final RegistryObject<Block> MAGIC_BLOCK =
+            registryObject("magic_block", () ->
+                    new MagicBlock(BlockBehaviour.Properties.of()
+                            .strength(5f, 7f)
+                            .sound(SoundType.AMETHYST)
                     )
             );
 
