@@ -29,7 +29,6 @@ public class ModBlocks
                             .noCollission()
                             .replaceable()
                             .sound(SoundType.TUFF)
-
                     )
             );
 
@@ -42,7 +41,7 @@ public class ModBlocks
                     )
             );
 
-    public static final RegistryObject<Block> RALEXENDRITE_ORE =
+    public static final RegistryObject<Block> ALEXENDRITE_ORE =
             registryObject("alexandrite_ore", () ->
                     new DropExperienceBlock(UniformInt.of(2, 4),BlockBehaviour.Properties.of()
                             .requiresCorrectToolForDrops()
@@ -50,7 +49,7 @@ public class ModBlocks
                     )
             );
 
-    public static final RegistryObject<Block> RALEXENDRITE_DEEPSLATE_ORE =
+    public static final RegistryObject<Block> ALEXENDRITE_DEEPSLATE_ORE =
             registryObject("alexandrite_deepslate_ore", () ->
                     new DropExperienceBlock(UniformInt.of(2, 4),BlockBehaviour.Properties.of()
                             .requiresCorrectToolForDrops()

@@ -2,6 +2,7 @@ package com.wdiscute.laicaps.item;
 
 import com.wdiscute.laicaps.Laicaps;
 import com.wdiscute.laicaps.block.ModBlocks;
+import com.wdiscute.laicaps.item.custom.ChiselItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -27,6 +28,9 @@ public class ModCreativeModeTabs
                         output.accept(ModItems.RAW_ALEXANDRITE.get());
                         output.accept(ModBlocks.RAW_ALEXENDRITE_BLOCK.get());
                         output.accept(ModBlocks.ALEXENDRITE_BLOCK.get());
+                        output.accept(ModBlocks.ALEXENDRITE_ORE.get());
+                        output.accept(ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get());
+                        output.accept(ModItems.CHISEL.get());
                     })
                     .build()
             );

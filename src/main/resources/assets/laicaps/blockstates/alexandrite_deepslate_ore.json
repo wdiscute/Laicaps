@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "laicaps:block/alexandrite_deepslate_ore"
+      "model": "laicaps:block/alexandrite_deepslate_ore "
     }
   }
 }

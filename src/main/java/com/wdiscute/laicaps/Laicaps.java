@@ -76,6 +76,8 @@ public class Laicaps
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS){
             event.accept(ModBlocks.ALEXENDRITE_BLOCK);
             event.accept(ModBlocks.RAW_ALEXENDRITE_BLOCK);
+            event.accept(ModBlocks.ALEXENDRITE_ORE);
+            event.accept(ModBlocks.ALEXENDRITE_DEEPSLATE_ORE);
         }
 
     }
