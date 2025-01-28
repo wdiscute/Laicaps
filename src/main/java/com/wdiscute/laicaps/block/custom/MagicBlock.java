@@ -67,7 +67,6 @@ public class MagicBlock extends Block {
             ((LivingEntity) pEntity).addEffect(new MobEffectInstance(MobEffects.JUMP, 5, 7, true, false), pEntity);
         }
 
-
         super.stepOn(pLevel, pPos, pState, pEntity);
     }
 }

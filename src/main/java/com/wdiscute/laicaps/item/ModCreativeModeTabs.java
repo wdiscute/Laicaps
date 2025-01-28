@@ -32,6 +32,8 @@ public class ModCreativeModeTabs
                         output.accept(ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get());
                         output.accept(ModBlocks.MAGIC_BLOCK.get());
                         output.accept(ModItems.CHISEL.get());
+                        output.accept(ModItems.KOHLRABI.get());
+                        output.accept(ModItems.AURORA_ASHES.get());
                     })
                     .build()
             );
