@@ -4,10 +4,17 @@
   "item.laicaps.chisel": "Chisel",
   "item.laicaps.kohlrabi": "Kohlrabi",
   "item.laicaps.aurora_ashes": "Aurora Ashes",
+
   "block.laicaps.alexandrite_block": "Block of Alexandrite",
   "block.laicaps.alexandrite_ore": "Alexandrite Ore",
   "block.laicaps.alexandrite_deepslate_ore": "Alexandrite Deepslate Ore",
   "block.laicaps.raw_alexandrite_block": "Block of Raw Alexandrite",
   "block.laicaps.magic_block": "Cool Block Of Magicalness",
-  "creativetab.laicaps.alexandrite_items": "Alexandrite"
+
+  "creativetab.laicaps.alexandrite_items": "Alexandrite",
+
+  "tooltip.laicaps.magic_block.tooltip": "This §k~~~ §rmagic §k~~~§r block makes you all §ljumpy and stuff§r",
+  "toolip.laicaps.chisel": "Hold shift for more information",
+  "toolip.laicaps.chisel.shift_down": "this chisel does very cool things",
+  "tooltip.laicaps.aurora_ashes.tooltip" : "A peculiar taste..."
 }

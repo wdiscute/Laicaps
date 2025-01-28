@@ -25,8 +25,7 @@ public class ModBlocks
             registryObject("alexandrite_block", () ->
                     new Block(BlockBehaviour.Properties.of()
                             .requiresCorrectToolForDrops()
-                            .strength(0.2f, 4f)
-                            .instabreak()
+                            .strength(4f, 4f)
                             .noCollission()
                             .replaceable()
                             .sound(SoundType.TUFF)
@@ -37,7 +36,7 @@ public class ModBlocks
             registryObject("raw_alexandrite_block", () ->
                     new Block(BlockBehaviour.Properties.of()
                             .requiresCorrectToolForDrops()
-                            .strength(0.2f, 4f)
+                            .strength(4f, 4f)
                             .sound(SoundType.BONE_BLOCK)
                     )
             );
