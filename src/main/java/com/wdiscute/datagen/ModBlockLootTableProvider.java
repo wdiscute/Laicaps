@@ -5,16 +5,13 @@ import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -31,9 +28,25 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
     @Override
     protected void generate() {
 
-        dropSelf(ModBlocks.ALEXENDRITE_BLOCK.get());
         dropSelf(ModBlocks.RAW_ALEXENDRITE_BLOCK.get());
         dropSelf(ModBlocks.MAGIC_BLOCK.get());
+
+        dropSelf(ModBlocks.ALEXENDRITE_BLOCK.get());
+        dropSelf(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
+        dropSelf(ModBlocks.ALEXANDRITE_FENCE.get());
+        dropSelf(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
+        dropSelf(ModBlocks.ALEXANDRITE_WALL.get());
+        dropSelf(ModBlocks.ALEXANDRITE_BUTTON.get());
+        dropSelf(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.ALEXANDRITE_STAIRS.get());
+
+
+
+        this.add(ModBlocks.ALEXANDRITE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.ALEXANDRITE_DOOR.get()));
+
+        this.add(ModBlocks.ALEXANDRITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.ALEXANDRITE_SLAB.get()));
 
         this.add(ModBlocks.ALEXENDRITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.ALEXENDRITE_ORE.get(), ModItems.RAW_ALEXANDRITE.get()));
@@ -41,7 +54,18 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         this.add(ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get(),
                 block -> createMultipleDrops(ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get(), ModItems.RAW_ALEXANDRITE.get(), 1,3));
 
+
+
+
+
+
+
     }
+
+
+
+
+
 
     protected LootTable.Builder createMultipleDrops(Block pBlock, Item itemToDrop, float minDrops, float maxDrops) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);

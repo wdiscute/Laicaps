@@ -25,6 +25,16 @@ public class ModCreativeModeTabs
                     .title(Component.translatable("creativetab.laicaps.alexandrite_items"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ALEXANDRITE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_STAIRS.get());
+                        output.accept(ModBlocks.ALEXANDRITE_SLAB.get());
+                        output.accept(ModBlocks.ALEXANDRITE_TRAPDOOR.get());
+                        output.accept(ModBlocks.ALEXANDRITE_DOOR.get());
+                        output.accept(ModBlocks.ALEXANDRITE_BUTTON.get());
+                        output.accept(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_FENCE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
+                        output.accept(ModBlocks.ALEXANDRITE_WALL.get());
+
                         output.accept(ModItems.RAW_ALEXANDRITE.get());
                         output.accept(ModBlocks.RAW_ALEXENDRITE_BLOCK.get());
                         output.accept(ModBlocks.ALEXENDRITE_BLOCK.get());

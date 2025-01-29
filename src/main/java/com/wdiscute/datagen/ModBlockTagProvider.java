@@ -5,6 +5,7 @@ import com.wdiscute.laicaps.block.ModBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -25,17 +26,56 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get())
                 .add(ModBlocks.ALEXENDRITE_ORE.get())
 
-                .add(ModBlocks.MAGIC_BLOCK.get());
+                .add(ModBlocks.MAGIC_BLOCK.get())
+                .add(ModBlocks.ALEXANDRITE_DOOR.get())
+                .add(ModBlocks.ALEXANDRITE_TRAPDOOR.get())
+                .add(ModBlocks.ALEXANDRITE_FENCE_GATE.get())
+                .add(ModBlocks.ALEXANDRITE_FENCE.get())
+                .add(ModBlocks.ALEXANDRITE_PRESSURE_PLATE.get())
+                .add(ModBlocks.ALEXANDRITE_BUTTON.get())
+                .add(ModBlocks.ALEXANDRITE_SLAB.get())
+                .add(ModBlocks.ALEXANDRITE_STAIRS.get())
+                .add(ModBlocks.ALEXANDRITE_WALL.get())
+
+
+        ;
+
+
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get())
                 .add(ModBlocks.ALEXENDRITE_ORE.get())
                 .add(ModBlocks.ALEXENDRITE_BLOCK.get())
-                .add(ModBlocks.RAW_ALEXENDRITE_BLOCK.get());
+                .add(ModBlocks.RAW_ALEXENDRITE_BLOCK.get())
+        ;
 
 
 
-                ;
+        //connects to other wooden fences
+        //tag(BlockTags.WOODEN_FENCES)
+        //        .add(ModBlocks.ALEXANDRITE_FENCE.get());
+
+        //connects to other fences (nether and modded)
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.ALEXANDRITE_FENCE.get())
+        ;
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.ALEXANDRITE_FENCE_GATE.get())
+        ;
+
+        //adds to forge tags
+        //tag(Tags.Blocks.GLASS)
+        //        .add(ModBlocks.ALEXANDRITE_GLASS.get())
+        //;
+
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.ALEXANDRITE_WALL.get())
+        ;
+
+
+
+
 
 
     }
