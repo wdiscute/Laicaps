@@ -35,6 +35,8 @@ public class ModCreativeModeTabs
                         output.accept(ModBlocks.ALEXANDRITE_FENCE_GATE.get());
                         output.accept(ModBlocks.ALEXANDRITE_WALL.get());
 
+                        output.accept(ModBlocks.ALEXANDRITE_LAMP.get());
+
                         output.accept(ModItems.RAW_ALEXANDRITE.get());
                         output.accept(ModBlocks.RAW_ALEXENDRITE_BLOCK.get());
                         output.accept(ModBlocks.ALEXENDRITE_BLOCK.get());
@@ -44,6 +46,7 @@ public class ModCreativeModeTabs
                         output.accept(ModItems.CHISEL.get());
                         output.accept(ModItems.KOHLRABI.get());
                         output.accept(ModItems.AURORA_ASHES.get());
+
                     })
                     .build()
             );

@@ -1,7 +1,9 @@
 package com.wdiscute.laicaps.block;
 
 import com.wdiscute.laicaps.Laicaps;
+import com.wdiscute.laicaps.block.custom.AlexandriteLampBlock;
 import com.wdiscute.laicaps.block.custom.MagicBlock;
+import com.wdiscute.laicaps.block.custom.PuzzleBlock;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -15,7 +17,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.awt.*;
 import java.util.function.Supplier;
 
 public class ModBlocks
@@ -141,7 +142,21 @@ public class ModBlocks
                     )
             );
 
+    public static final RegistryObject<Block> ALEXANDRITE_LAMP =
+            registryObject("alexandrite_lamp", () ->
+                    new AlexandriteLampBlock(BlockBehaviour.Properties.of()
+                            .strength(3)
+                            .requiresCorrectToolForDrops()
+                            .lightLevel(state -> state.getValue(AlexandriteLampBlock.CLICKED) ? 15 : 0)
+                    )
+            );
 
+    public static final RegistryObject<Block> PUZZLE_BLOCK =
+            registryObject("puzzle_block", () ->
+                    new PuzzleBlock(BlockBehaviour.Properties.of()
+                            .instabreak()
+                    )
+            );
 
 
 

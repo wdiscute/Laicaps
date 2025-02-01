@@ -21,11 +21,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(RecipeOutput pRecipeOutput)
     {
-        List<ItemLike> ALEXANDRITE_SMELTABLES = List.of(
-                ModItems.RAW_ALEXANDRITE.get(),
-                ModBlocks.ALEXENDRITE_ORE.get(),
-                ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get()
-        );
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ALEXENDRITE_BLOCK.get())
                 .pattern("AAA")
@@ -47,19 +42,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.ALEXENDRITE_BLOCK.get()), has(ModBlocks.ALEXENDRITE_BLOCK.get()))
                 .save(pRecipeOutput, Laicaps.MOD_ID + ":alexandrite_but_with_more_name_if_theres_duplicates");
 
+        //alexandrite smelting - raw, ore, deepslate ore
+        if(true){
+            List<ItemLike> ALEXANDRITE_SMELTABLES = List.of(
+                    ModItems.RAW_ALEXANDRITE.get(),
+                    ModBlocks.ALEXENDRITE_ORE.get(),
+                    ModBlocks.ALEXENDRITE_DEEPSLATE_ORE.get()
+            );
 
-        oreSmelting(pRecipeOutput, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(),
-                0.25f, 200, "Alexandrite");
+            oreSmelting(pRecipeOutput, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(),
+                    0.25f, 200);
 
-        oreBlasting(pRecipeOutput, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(),
-                0.25f, 100, "Alexandrite");
+            oreBlasting(pRecipeOutput, ALEXANDRITE_SMELTABLES, RecipeCategory.MISC, ModItems.ALEXANDRITE.get(),
+                    0.25f, 100);
+        }
 
+        //stairs
+        if(true){
+            stairBuilder(ModBlocks.ALEXANDRITE_STAIRS.get(), Ingredient.of(ModBlocks.ALEXENDRITE_BLOCK.get()))
+                    .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get())).save(pRecipeOutput);
+        }
 
-
-        stairBuilder(ModBlocks.ALEXANDRITE_STAIRS.get(), Ingredient.of(ModBlocks.ALEXENDRITE_BLOCK.get()))
-                .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get())).save(pRecipeOutput);
-
-        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ALEXANDRITE_SLAB.get(), ModBlocks.ALEXENDRITE_BLOCK.get());
+        if(true){
+            slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS,
+                    ModBlocks.ALEXANDRITE_SLAB.get(), ModBlocks.ALEXENDRITE_BLOCK.get());
+        }
 
         buttonBuilder(ModBlocks.ALEXANDRITE_BUTTON.get(), Ingredient.of(ModBlocks.ALEXENDRITE_BLOCK.get()))
                 .unlockedBy(getHasName(ModItems.ALEXANDRITE.get()), has(ModItems.ALEXANDRITE.get())).save(pRecipeOutput);
@@ -100,7 +107,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void oreBlasting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
-                                      float pExperience, int pCookingTime, String pGroup) {
+                                      float pExperience, int pCookingTime) {
         oreCooking(recipeOutput, RecipeSerializer.BLASTING_RECIPE, BlastingRecipe::new, pIngredients, pCategory, pResult,
                 pExperience, pCookingTime, "_from_blasting");
     }

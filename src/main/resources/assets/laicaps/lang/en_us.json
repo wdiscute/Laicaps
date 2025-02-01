@@ -1,4 +1,19 @@
 {
+
+  "block.laicaps.puzzle_block": "Puzzle block lolololol",
+
+
+
+
+
+
+
+
+
+
+
+
+
   "item.laicaps.alexandrite": "Alexandrite",
   "item.laicaps.raw_alexandrite": "Raw Alexandrite",
   "item.laicaps.chisel": "Chisel",
@@ -16,6 +31,7 @@
   "block.laicaps.alexandrite_fence_gate": "Alexandrite Fence Gate",
   "block.laicaps.alexandrite_wall": "Alexandrite Wall",
 
+  "block.laicaps.alexandrite_lamp": "Alexandrite Lamp",
 
 
 
