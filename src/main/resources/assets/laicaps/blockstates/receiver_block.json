@@ -5,6 +5,9 @@
     },
     "active=false": {
       "model": "laicaps:block/receiver_block"
+    },
+    "": {
+      "model": "laicaps:block/receiver_block_active"
     }
   }
 }

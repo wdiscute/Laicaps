@@ -2,6 +2,7 @@ package com.wdiscute.laicaps;
 
 import com.mojang.logging.LogUtils;
 import com.wdiscute.component.ModDataComponentTypes;
+import com.wdiscute.laicaps.block.ModBlockEntity;
 import com.wdiscute.laicaps.block.ModBlocks;
 import com.wdiscute.laicaps.item.ModCreativeModeTabs;
 import com.wdiscute.laicaps.item.ModItems;
@@ -40,6 +41,7 @@ public class Laicaps
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModDataComponentTypes.register(modEventBus);
+        ModBlockEntity.BLOCK_ENTITIES.register(modEventBus);
 
 
         // Register the item to a creative tab
