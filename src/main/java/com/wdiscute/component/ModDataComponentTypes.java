@@ -4,6 +4,7 @@ import com.wdiscute.laicaps.Laicaps;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.util.StringRepresentable;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -21,8 +22,6 @@ public class ModDataComponentTypes
 
     public static final RegistryObject<DataComponentType<BlockPos>> COORDINATES = register("coordinates",
             builder -> builder.persistent(BlockPos.CODEC));
-
-
 
 
 

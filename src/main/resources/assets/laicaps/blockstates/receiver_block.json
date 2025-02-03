@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=true": {
+      "model": "laicaps:block/receiver_block_active"
+    },
+    "active=false": {
+      "model": "laicaps:block/receiver_block"
+    }
+  }
+}

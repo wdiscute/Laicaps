@@ -16,6 +16,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.fml.ISystemReportExtender;
 
 import java.util.List;
 import java.util.Map;
@@ -45,7 +46,7 @@ public class ChiselItem extends Item {
 
 
         if (!level.isClientSide()) {
-
+            System.out.print("wad");
             pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
             pContext.getItemInHand().hurtAndBreak(2, pContext.getPlayer(), EquipmentSlot.MAINHAND);
 

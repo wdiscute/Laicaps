@@ -3,12 +3,14 @@ package com.wdiscute.laicaps.block;
 import com.wdiscute.laicaps.Laicaps;
 import com.wdiscute.laicaps.block.custom.AlexandriteLampBlock;
 import com.wdiscute.laicaps.block.custom.MagicBlock;
-import com.wdiscute.laicaps.block.custom.PuzzleBlock;
+import com.wdiscute.laicaps.block.custom.PuzzleBLock;
+import com.wdiscute.laicaps.block.custom.ReceiverBlock;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
@@ -153,7 +155,14 @@ public class ModBlocks
 
     public static final RegistryObject<Block> PUZZLE_BLOCK =
             registryObject("puzzle_block", () ->
-                    new PuzzleBlock(BlockBehaviour.Properties.of()
+                    new PuzzleBLock(BlockBehaviour.Properties.of()
+                            .instabreak()
+                    )
+            );
+
+    public static final RegistryObject<Block> RECEIVER_BLOCK =
+            registryObject("receiver_block", () ->
+                    new ReceiverBlock(BlockBehaviour.Properties.of()
                             .instabreak()
                     )
             );

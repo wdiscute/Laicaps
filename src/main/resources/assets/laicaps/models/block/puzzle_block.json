@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/orientable",
   "textures": {
-    "all": "minecraft:block/andesite"
+    "front": "laicaps:block/puzzle_front",
+    "side": "laicaps:block/puzzle_side",
+    "top": "laicaps:block/puzzle_top"
   }
 }
