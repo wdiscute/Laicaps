@@ -2,8 +2,13 @@ package com.wdiscute.laicaps.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import com.wdiscute.laicaps.block.ModBlocks;
+import net.minecraft.client.particle.BubbleParticle;
+import net.minecraft.client.particle.Particle;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.particles.*;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -13,12 +18,68 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 
 public class PuzzleBLock extends HorizontalDirectionalBlock
 {
     public PuzzleBLock(Properties properties)
     {
         super(properties);
+    }
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom)
+    {
+        float speed = 0.5f;
+        //WEST
+        float x = -0.2f;
+        float y = 0.5f;
+        float z = 0.5f;
+        float sx = -speed;
+        float sy = 0;
+        float sz = 0;
+
+        if (pState.getValue(FACING) == Direction.EAST)
+        {
+            x = 1.2f;
+            y = 0.5f;
+            z = 0.5f;
+            sx = speed;
+            sy = 0;
+            sz = 0;
+
+        }
+
+        if (pState.getValue(FACING) == Direction.NORTH)
+        {
+            x = 0.5f;
+            y = 0.5f;
+            z = -0.2f;
+            sx = 0;
+            sy = 0;
+            sz = -speed;
+
+        }
+
+        if (pState.getValue(FACING) == Direction.SOUTH)
+        {
+            x = 0.5f;
+            y = 0.5f;
+            z = 1.2f;
+            sx = 0;
+            sy = 0;
+            sz = speed;
+        }
+
+        pLevel.addParticle(ParticleTypes.CLOUD,
+                (double) pPos.getX() + x,
+                (double) pPos.getY() + y,
+                (double) pPos.getZ() + z,
+                sx,
+                sy,
+                sz
+
+        );
     }
 
     @Override
@@ -42,20 +103,6 @@ public class PuzzleBLock extends HorizontalDirectionalBlock
             {
                 pLevel.setBlockAndUpdate(pPos, pState.setValue(FACING, Direction.NORTH));
             }
-
-
-            System.out.println("puzzle block level is " + pLevel);
-            pLevel.scheduleTick(pPos.east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east().east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east().east().east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east().east().east().east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east().east().east().east().east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-            pLevel.scheduleTick(pPos.east().east().east().east().east().east().east().east().east().east(), ModBlocks.RECEIVER_BLOCK.get(), 1);
-
 
         }
         return InteractionResult.SUCCESS;

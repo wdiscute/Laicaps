@@ -160,7 +160,7 @@ public class ModBlocks
                     )
             );
 
-    public static final RegistryObject<Block> RECEIVER_BLOCK =
+    public static final RegistryObject<ReceiverBlock> RECEIVER_BLOCK =
             registryObject("receiver_block", () ->
                     new ReceiverBlock(BlockBehaviour.Properties.of()
                             .instabreak()
