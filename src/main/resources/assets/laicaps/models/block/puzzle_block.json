@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "laicaps:block/puzzle_front",
-    "side": "laicaps:block/puzzle_side",
-    "top": "laicaps:block/puzzle_top"
-  }
-}

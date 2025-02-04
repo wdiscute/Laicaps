@@ -1,13 +1,9 @@
 package com.wdiscute.laicaps.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import com.wdiscute.laicaps.block.ModBlocks;
-import net.minecraft.client.particle.BubbleParticle;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.*;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -18,11 +14,10 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 
-public class PuzzleBLock extends HorizontalDirectionalBlock
+public class SenderPuzzleBLock extends HorizontalDirectionalBlock
 {
-    public PuzzleBLock(Properties properties)
+    public SenderPuzzleBLock(Properties properties)
     {
         super(properties);
     }

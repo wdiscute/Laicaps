@@ -77,7 +77,7 @@ public class ReceiverBlock extends Block implements EntityBlock
                 }
                 BlockState blockStateBeingTested = pLevel.getBlockState(currentPos);
 
-                if (blockStateBeingTested.getBlock().defaultBlockState() == ModBlocks.PUZZLE_BLOCK.get().defaultBlockState()
+                if (blockStateBeingTested.getBlock().defaultBlockState() == ModBlocks.SENDER_PUZZLE_BLOCK.get().defaultBlockState()
                         && blockStateBeingTested.getValue(HorizontalDirectionalBlock.FACING) == dir.getOpposite())
                 {
                     ChangeActive(pLevel, pPos, true);
