@@ -3,8 +3,8 @@
   "textures": {
     "particle": "laicaps:block/receiver_block_side",
     "down": "laicaps:block/receiver_block_side",
-    "up": "laicaps:block/receiver_block_n_n",
-    "north": "laicaps:block/receiver_block_side_active",
+    "up": "laicaps:block/receiver_block_nwse",
+    "north": "laicaps:block/receiver_block_side",
     "east": "laicaps:block/receiver_block_side",
     "south": "laicaps:block/receiver_block_side",
     "west": "laicaps:block/receiver_block_side"

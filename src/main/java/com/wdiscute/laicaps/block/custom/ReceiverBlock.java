@@ -52,7 +52,7 @@ public class ReceiverBlock extends Block implements EntityBlock
         {
 
             pLevel.addParticle(
-                    new DustParticleOptions(new Vec3(0.678f, 0.847f, 0.922f).toVector3f(), 3.0F) //FLOAT = SCALE
+                    new DustParticleOptions(new Vec3(0.557f, 0.369f, 0.961f).toVector3f(), 3.0F) //FLOAT = SCALE
                     {
                     },
                     (double) pPos.getX() + 0.5f,
@@ -126,6 +126,14 @@ public class ReceiverBlock extends Block implements EntityBlock
         if (level.getBlockState(pos).getValue(EAST_ENABLED) && !level.getBlockState(pos).getValue(EAST_ACTIVE))
             shouldBeActive = false;
 
+        if (
+                !level.getBlockState(pos).getValue(NORTH_ENABLED) &&
+                !level.getBlockState(pos).getValue(WEST_ENABLED) &&
+                !level.getBlockState(pos).getValue(SOUTH_ENABLED) &&
+                !level.getBlockState(pos).getValue(EAST_ENABLED))
+            shouldBeActive = false;
+
+
         //System.out.println("ran check with " + shouldBeActive);
         level.setBlockAndUpdate(pos, level.getBlockState(pos).setValue(ACTIVE, shouldBeActive));
 
@@ -161,8 +169,7 @@ public class ReceiverBlock extends Block implements EntityBlock
             BlockEntity be = pLevel.getBlockEntity(pPos);
             if (be instanceof ReceiverBlockEntity blockEntity)
             {
-            }
-            else
+            } else
             {
                 return ItemInteractionResult.FAIL;
             }
@@ -202,7 +209,7 @@ public class ReceiverBlock extends Block implements EntityBlock
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(ACTIVE, false));
         this.registerDefaultState(this.defaultBlockState().setValue(NORTH_ACTIVE, false));
-        this.registerDefaultState(this.defaultBlockState().setValue(NORTH_ENABLED, true));
+        this.registerDefaultState(this.defaultBlockState().setValue(NORTH_ENABLED, false));
         this.registerDefaultState(this.defaultBlockState().setValue(WEST_ACTIVE, false));
         this.registerDefaultState(this.defaultBlockState().setValue(WEST_ENABLED, false));
         this.registerDefaultState(this.defaultBlockState().setValue(SOUTH_ACTIVE, false));
