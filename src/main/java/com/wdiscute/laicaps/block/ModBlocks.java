@@ -1,10 +1,7 @@
 package com.wdiscute.laicaps.block;
 
 import com.wdiscute.laicaps.Laicaps;
-import com.wdiscute.laicaps.block.custom.AlexandriteLampBlock;
-import com.wdiscute.laicaps.block.custom.MagicBlock;
-import com.wdiscute.laicaps.block.custom.SenderPuzzleBLock;
-import com.wdiscute.laicaps.block.custom.ReceiverBlock;
+import com.wdiscute.laicaps.block.custom.*;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -165,6 +162,14 @@ public class ModBlocks
                             .instabreak()
                     )
             );
+
+    public static final RegistryObject<Block> SYMBOL_PUZZLE_BLOCK =
+            registryObject("symbol_puzzle_block", () ->
+                    new SymbolPuzzleBlock(BlockBehaviour.Properties.of()
+                            .instabreak()
+                    )
+            );
+
 
 
 
