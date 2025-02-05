@@ -37,6 +37,7 @@ public class ChiselItem extends Item {
         super(pProperties);
     }
 
+    /*
     @Override
     public InteractionResult useOn(UseOnContext pContext) {
         Level level = pContext.getLevel();
@@ -46,7 +47,6 @@ public class ChiselItem extends Item {
 
 
         if (!level.isClientSide()) {
-            System.out.print("wad");
             pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
             pContext.getItemInHand().hurtAndBreak(2, pContext.getPlayer(), EquipmentSlot.MAINHAND);
 
@@ -81,7 +81,7 @@ public class ChiselItem extends Item {
 
         return InteractionResult.FAIL;
     }
-
+    */
 
     @Override
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {

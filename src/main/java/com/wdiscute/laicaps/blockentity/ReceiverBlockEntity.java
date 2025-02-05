@@ -3,6 +3,7 @@ package com.wdiscute.laicaps.blockentity;
 import com.wdiscute.laicaps.block.ModBlockEntity;
 import com.wdiscute.laicaps.block.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -11,6 +12,19 @@ import net.minecraft.world.level.block.state.BlockState;
 public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEntity
 {
     private int counter = 0;
+    private Direction directionBeingChanged = Direction.NORTH;
+
+    public Direction getDirection()
+    {
+        return directionBeingChanged;
+    }
+
+    public void setDirection(Direction dir)
+    {
+        directionBeingChanged = dir;
+        setChanged();
+    }
+
 
     @Override
     public void tick()
@@ -21,7 +35,6 @@ public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEnt
         {
             this.level.scheduleTick(this.getBlockPos(), ModBlocks.RECEIVER_BLOCK.get(), 1);
         }
-
 
 
     }
@@ -43,13 +56,13 @@ public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEnt
     protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
         super.loadAdditional(pTag, pRegistries);
-        //this.counter = pTag.getInt("Counter");
+        directionBeingChanged = Direction.byName(pTag.getString("dir"));
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
         super.saveAdditional(pTag, pRegistries);
-        //pTag.putInt("Counter", this.counter);
+        pTag.putString("dir", directionBeingChanged.getName());
     }
 }

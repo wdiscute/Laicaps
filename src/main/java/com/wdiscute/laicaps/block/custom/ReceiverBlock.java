@@ -4,13 +4,18 @@ import com.wdiscute.laicaps.block.ModBlockEntity;
 import com.wdiscute.laicaps.block.ModBlocks;
 import com.wdiscute.laicaps.blockentity.ReceiverBlockEntity;
 import com.wdiscute.laicaps.blockentity.TickableBlockEntity;
+import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
@@ -109,19 +114,19 @@ public class ReceiverBlock extends Block implements EntityBlock
     private void CheckActive(Level level, BlockPos pos)
     {
         boolean shouldBeActive = true;
-        if(level.getBlockState(pos).getValue(NORTH_ENABLED) && !level.getBlockState(pos).getValue(NORTH_ENABLED))
+        if (level.getBlockState(pos).getValue(NORTH_ENABLED) && !level.getBlockState(pos).getValue(NORTH_ACTIVE))
             shouldBeActive = false;
 
-        if(level.getBlockState(pos).getValue(WEST_ENABLED) && !level.getBlockState(pos).getValue(WEST_ACTIVE))
+        if (level.getBlockState(pos).getValue(WEST_ENABLED) && !level.getBlockState(pos).getValue(WEST_ACTIVE))
             shouldBeActive = false;
 
-        if(level.getBlockState(pos).getValue(SOUTH_ENABLED) && !level.getBlockState(pos).getValue(SOUTH_ACTIVE))
+        if (level.getBlockState(pos).getValue(SOUTH_ENABLED) && !level.getBlockState(pos).getValue(SOUTH_ACTIVE))
             shouldBeActive = false;
 
-        if(level.getBlockState(pos).getValue(EAST_ENABLED) && !level.getBlockState(pos).getValue(EAST_ACTIVE))
+        if (level.getBlockState(pos).getValue(EAST_ENABLED) && !level.getBlockState(pos).getValue(EAST_ACTIVE))
             shouldBeActive = false;
 
-        System.out.println("ran check with " + shouldBeActive);
+        //System.out.println("ran check with " + shouldBeActive);
         level.setBlockAndUpdate(pos, level.getBlockState(pos).setValue(ACTIVE, shouldBeActive));
 
     }
@@ -129,18 +134,19 @@ public class ReceiverBlock extends Block implements EntityBlock
     private void ChangeDirActive(Level level, BlockPos pos, Direction dir, boolean bActive)
     {
         BlockState bs = level.getBlockState(pos);
+        //System.out.println("Changed active with dir " + dir + " and bactive " + bActive);
 
         if (dir == Direction.NORTH)
             if (bs.getValue(NORTH_ENABLED))
-                level.setBlockAndUpdate(pos, bs.setValue(EAST_ACTIVE, bActive));
+                level.setBlockAndUpdate(pos, bs.setValue(NORTH_ACTIVE, bActive));
 
         if (dir == Direction.WEST)
             if (bs.getValue(WEST_ENABLED))
-                level.setBlockAndUpdate(pos, bs.setValue(EAST_ACTIVE, bActive));
+                level.setBlockAndUpdate(pos, bs.setValue(WEST_ACTIVE, bActive));
 
         if (dir == Direction.SOUTH)
             if (bs.getValue(SOUTH_ENABLED))
-                level.setBlockAndUpdate(pos, bs.setValue(EAST_ACTIVE, bActive));
+                level.setBlockAndUpdate(pos, bs.setValue(SOUTH_ACTIVE, bActive));
 
         if (dir == Direction.EAST)
             if (bs.getValue(EAST_ENABLED))
@@ -148,21 +154,48 @@ public class ReceiverBlock extends Block implements EntityBlock
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult)
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult)
     {
         if (!pLevel.isClientSide)
         {
             BlockEntity be = pLevel.getBlockEntity(pPos);
-            if (be instanceof ReceiverBlockEntity bEntity)
+            if (be instanceof ReceiverBlockEntity blockEntity)
             {
-                //run code that calls method in bEntity
-                //int counter = bEntity.IncrementCounter();
-
             }
-        }
-        return InteractionResult.SUCCESS;
-    }
+            else
+            {
+                return ItemInteractionResult.FAIL;
+            }
 
+            if (pPlayer.getOffhandItem().getItem() == ModItems.CHISEL.get())
+            {
+                Direction dir2 = blockEntity.getDirection();
+                if (dir2 == Direction.NORTH) blockEntity.setDirection(Direction.WEST);
+                if (dir2 == Direction.WEST) blockEntity.setDirection(Direction.SOUTH);
+                if (dir2 == Direction.SOUTH) blockEntity.setDirection(Direction.EAST);
+                if (dir2 == Direction.EAST) blockEntity.setDirection(Direction.NORTH);
+
+                pPlayer.sendSystemMessage(Component.literal("direction changed to " + blockEntity.getDirection()));
+            }
+
+            if (pPlayer.getMainHandItem().getItem() == ModItems.CHISEL.get())
+            {
+                if (blockEntity.getDirection() == Direction.NORTH)
+                    pLevel.setBlockAndUpdate(pPos, pState.setValue(NORTH_ENABLED, !pState.getValue(NORTH_ENABLED)));
+                if (blockEntity.getDirection() == Direction.WEST)
+                    pLevel.setBlockAndUpdate(pPos, pState.setValue(WEST_ENABLED, !pState.getValue(WEST_ENABLED)));
+                if (blockEntity.getDirection() == Direction.SOUTH)
+                    pLevel.setBlockAndUpdate(pPos, pState.setValue(SOUTH_ENABLED, !pState.getValue(SOUTH_ENABLED)));
+                if (blockEntity.getDirection() == Direction.EAST)
+                    pLevel.setBlockAndUpdate(pPos, pState.setValue(EAST_ENABLED, !pState.getValue(EAST_ENABLED)));
+
+                pPlayer.sendSystemMessage(Component.literal("flipped " + blockEntity.getDirection()));
+            }
+
+
+        }
+        return ItemInteractionResult.SUCCESS;
+    }
 
     public ReceiverBlock(Properties properties)
     {
@@ -171,11 +204,11 @@ public class ReceiverBlock extends Block implements EntityBlock
         this.registerDefaultState(this.defaultBlockState().setValue(NORTH_ACTIVE, false));
         this.registerDefaultState(this.defaultBlockState().setValue(NORTH_ENABLED, true));
         this.registerDefaultState(this.defaultBlockState().setValue(WEST_ACTIVE, false));
-        this.registerDefaultState(this.defaultBlockState().setValue(WEST_ENABLED, true));
+        this.registerDefaultState(this.defaultBlockState().setValue(WEST_ENABLED, false));
         this.registerDefaultState(this.defaultBlockState().setValue(SOUTH_ACTIVE, false));
-        this.registerDefaultState(this.defaultBlockState().setValue(SOUTH_ENABLED, true));
+        this.registerDefaultState(this.defaultBlockState().setValue(SOUTH_ENABLED, false));
         this.registerDefaultState(this.defaultBlockState().setValue(EAST_ACTIVE, false));
-        this.registerDefaultState(this.defaultBlockState().setValue(EAST_ENABLED, true));
+        this.registerDefaultState(this.defaultBlockState().setValue(EAST_ENABLED, false));
     }
 
     @Override

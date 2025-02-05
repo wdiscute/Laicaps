@@ -1,10 +1,28 @@
 {
   "variants": {
-    "active=false": {
-      "model": "laicaps:block/receiver_block"
-    },
-    "active=true": {
+    "north_enabled=true,west_enabled=false,south_enabled=false,east_enabled=false,north_active=true": {
       "model": "laicaps:block/receiver_block_n_n"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=false,east_enabled=false,north_active=false": {
+      "model": "laicaps:block/receiver_block_n"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=false,east_enabled=false,west_active=true": {
+      "model": "laicaps:block/receiver_block_w_w"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=false,east_enabled=false,west_active=false": {
+      "model": "laicaps:block/receiver_block_w"
+    },
+    "north_enabled=false,west_enabled=false,south_enabled=true,east_enabled=false,south_active=true": {
+      "model": "laicaps:block/receiver_block_s_s"
+    },
+    "north_enabled=false,west_enabled=false,south_enabled=true,east_enabled=false,south_active=false": {
+      "model": "laicaps:block/receiver_block_s"
+    },
+    "north_enabled=false,west_enabled=false,south_enabled=false,east_enabled=true,east_active=true": {
+      "model": "laicaps:block/receiver_block_e_e"
+    },
+    "north_enabled=false,west_enabled=false,south_enabled=false,east_enabled=true,east_active=false": {
+      "model": "laicaps:block/receiver_block_e"
     }
   }
 }
