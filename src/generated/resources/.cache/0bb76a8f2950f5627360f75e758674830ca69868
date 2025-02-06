@@ -1,0 +1,6 @@
+// 1.21	2025-01-29T22:31:56.2284248	Tags for minecraft:block mod id laicaps
+8424ff40301a27ff2643bba04d7ae14fe4b83c4c data/minecraft/tags/block/fences.json
+d944fddda17e1022d893cfdc0d47266f390b8c09 data/minecraft/tags/block/fence_gates.json
+13d44c056f6e034d0b2d40e0a1e8e5b32a5fe30f data/minecraft/tags/block/mineable/pickaxe.json
+c5760ae4d7646772f5ea5b5e00958b92ba1c0ee1 data/minecraft/tags/block/needs_iron_tool.json
+8413c7c0a3dca99a11b69a3a00bc65c628fc742b data/minecraft/tags/block/walls.json
