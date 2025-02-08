@@ -34,7 +34,7 @@ public class SenderPuzzleBLock extends HorizontalDirectionalBlock
         float sy = 0;
         float sz = 0;
 
-        if (pState.getValue(FACING) == Direction.EAST)
+                if (pState.getValue(FACING) == Direction.EAST)
         {
             x = 1.2f;
             y = 0.5f;

@@ -136,23 +136,112 @@
 
 
 
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=false,west_active=false,south_active=false": {
+      "model": "laicaps:block/receiver_block_nws"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=true,west_active=true,south_active=true": {
+      "model": "laicaps:block/receiver_block_nws_nws"
+    },
 
 
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=true,west_active=false,south_active=false": {
+      "model": "laicaps:block/receiver_block_nws_n"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=true,west_active=true,south_active=false": {
+      "model": "laicaps:block/receiver_block_nws_nw"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=true,west_active=false,south_active=true": {
+      "model": "laicaps:block/receiver_block_nws_ns"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=false,west_active=true,south_active=false": {
+      "model": "laicaps:block/receiver_block_nws_w"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=false,west_active=true,south_active=true": {
+      "model": "laicaps:block/receiver_block_nws_ws"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=true,east_enabled=false,north_active=false,west_active=false,south_active=true": {
+      "model": "laicaps:block/receiver_block_nws_s"
+    },
 
 
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=false,west_active=false,east_active=false": {
+      "model": "laicaps:block/receiver_block_nwe"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=true,west_active=true,east_active=true": {
+      "model": "laicaps:block/receiver_block_nwe_nwe"
+    },
+
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=true,west_active=false,east_active=false": {
+      "model": "laicaps:block/receiver_block_nwe_n"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=true,west_active=true,east_active=false": {
+      "model": "laicaps:block/receiver_block_nwe_nw"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=true,west_active=false,east_active=true": {
+      "model": "laicaps:block/receiver_block_nwe_ne"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=false,west_active=true,east_active=false": {
+      "model": "laicaps:block/receiver_block_nwe_w"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=false,west_active=true,east_active=true": {
+      "model": "laicaps:block/receiver_block_nwe_we"
+    },
+    "north_enabled=true,west_enabled=true,south_enabled=false,east_enabled=true,north_active=false,west_active=false,east_active=true": {
+      "model": "laicaps:block/receiver_block_nwe_e"
+    },
 
 
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=false,south_active=false,east_active=false": {
+      "model": "laicaps:block/receiver_block_nse"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=true,south_active=true,east_active=true": {
+      "model": "laicaps:block/receiver_block_nse_nse"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=true,south_active=false,east_active=false": {
+      "model": "laicaps:block/receiver_block_nse_n"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=true,south_active=true,east_active=false": {
+      "model": "laicaps:block/receiver_block_nse_ns"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=true,south_active=false,east_active=true": {
+      "model": "laicaps:block/receiver_block_nse_ne"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=false,south_active=true,east_active=false": {
+      "model": "laicaps:block/receiver_block_nse_s"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=false,south_active=true,east_active=true": {
+      "model": "laicaps:block/receiver_block_nse_se"
+    },
+    "north_enabled=true,west_enabled=false,south_enabled=true,east_enabled=true,north_active=false,south_active=false,east_active=true": {
+      "model": "laicaps:block/receiver_block_nse_e"
+    },
 
 
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=false,south_active=false,east_active=false": {
+      "model": "laicaps:block/receiver_block_wse"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=true,south_active=true,east_active=true": {
+      "model": "laicaps:block/receiver_block_wse_wse"
+    },
 
-
-
-
-
-
-
-
-
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=true,south_active=false,east_active=false": {
+      "model": "laicaps:block/receiver_block_wse_w"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=true,south_active=true,east_active=false": {
+      "model": "laicaps:block/receiver_block_wse_ws"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=true,south_active=false,east_active=true": {
+      "model": "laicaps:block/receiver_block_wse_we"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=false,south_active=true,east_active=false": {
+      "model": "laicaps:block/receiver_block_wse_s"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=false,south_active=true,east_active=true": {
+      "model": "laicaps:block/receiver_block_wse_se"
+    },
+    "north_enabled=false,west_enabled=true,south_enabled=true,east_enabled=true,west_active=false,south_active=false,east_active=true": {
+      "model": "laicaps:block/receiver_block_wse_e"
+    },
 
 
 

@@ -22,7 +22,7 @@ public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEnt
     public void setDirection(Direction dir)
     {
         directionBeingChanged = dir;
-        setChanged();
+        //setChanged();
     }
 
 
@@ -45,7 +45,6 @@ public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEnt
         super(ModBlockEntity.RECEIVER_BLOCK.get(), pPos, pBlockState);
     }
 
-
     //private int counter;
     //public int IncrementCounter(){
     //    ++this.counter;
@@ -55,14 +54,12 @@ public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEnt
     @Override
     protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
-        super.loadAdditional(pTag, pRegistries);
-        directionBeingChanged = Direction.byName(pTag.getString("dir"));
+        this.setDirection(Direction.byName(pTag.getString("dir")));
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
-        super.saveAdditional(pTag, pRegistries);
         pTag.putString("dir", directionBeingChanged.getName());
     }
 }

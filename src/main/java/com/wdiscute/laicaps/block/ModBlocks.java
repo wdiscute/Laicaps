@@ -152,21 +152,28 @@ public class ModBlocks
     public static final RegistryObject<Block> SENDER_PUZZLE_BLOCK =
             registryObject("sender_puzzle_block", () ->
                     new SenderPuzzleBLock(BlockBehaviour.Properties.of()
-                            .instabreak()
+                            .strength(30)
                     )
             );
 
     public static final RegistryObject<ReceiverBlock> RECEIVER_BLOCK =
             registryObject("receiver_block", () ->
                     new ReceiverBlock(BlockBehaviour.Properties.of()
-                            .instabreak()
+                            .strength(30)
                     )
             );
 
     public static final RegistryObject<Block> SYMBOL_PUZZLE_BLOCK =
             registryObject("symbol_puzzle_block", () ->
                     new SymbolPuzzleBlock(BlockBehaviour.Properties.of()
-                            .instabreak()
+                            .strength(30)
+                    )
+            );
+
+    public static final RegistryObject<Block> SYMBOL_CONTROLLER_BLOCK =
+            registryObject("symbol_controller_block", () ->
+                    new SymbolControllerBlock(BlockBehaviour.Properties.of()
+                            .strength(30)
                     )
             );
 
