@@ -5,7 +5,7 @@
     "down": "laicaps:block/receiver_block_side",
     "up": "laicaps:block/receiver_block_e",
     "north": "laicaps:block/receiver_block_side",
-    "east": "laicaps:block/receiver_block_side",
+    "east": "laicaps:block/receiver_block_side_inactive",
     "south": "laicaps:block/receiver_block_side",
     "west": "laicaps:block/receiver_block_side"
   }
