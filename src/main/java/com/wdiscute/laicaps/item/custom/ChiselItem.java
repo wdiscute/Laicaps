@@ -21,7 +21,8 @@ import net.minecraftforge.fml.ISystemReportExtender;
 import java.util.List;
 import java.util.Map;
 
-public class ChiselItem extends Item {
+public class ChiselItem extends Item
+{
 
     private static final Map<Block, Block> CHISEL_MAP =
             Map.of(
@@ -33,65 +34,39 @@ public class ChiselItem extends Item {
 
             );
 
-    public ChiselItem(Properties pProperties) {
+    public ChiselItem(Properties pProperties)
+    {
         super(pProperties);
     }
 
-    /*
+
     @Override
-    public InteractionResult useOn(UseOnContext pContext) {
+    public InteractionResult useOn(UseOnContext pContext)
+    {
         Level level = pContext.getLevel();
-        Block clickedBlock = level.getBlockState(pContext.getClickedPos()).getBlock();
 
-        //if(CHISEL_MAP.containsKey(clickedBlock) && pContext.getPlayer().isCrouching())
-
-
-        if (!level.isClientSide()) {
+        if (!level.isClientSide() && pContext.getPlayer().isCrouching())
+        {
             pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
-            pContext.getItemInHand().hurtAndBreak(2, pContext.getPlayer(), EquipmentSlot.MAINHAND);
-
-            ItemStack offhanditemstack = pContext.getPlayer().getOffhandItem();
-            if (offhanditemstack.isEmpty()) return InteractionResult.FAIL;
-
-            if (offhanditemstack.getItem() instanceof BlockItem) {
-                Block block = ((BlockItem) offhanditemstack.getItem()).getBlock();
-                level.setBlockAndUpdate(pContext.getClickedPos(), block.defaultBlockState());
-
-                level.playSound(null, pContext.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
-
-                return InteractionResult.SUCCESS;
-            }
-
-            if (offhanditemstack.getItem() == Items.WATER_BUCKET) {
-                level.setBlockAndUpdate(pContext.getClickedPos(), Blocks.WATER.defaultBlockState());
-                level.playSound(null, pContext.getClickedPos(), SoundEvents.BUCKET_EMPTY_AXOLOTL, SoundSource.BLOCKS);
-
-                return InteractionResult.SUCCESS;
-            }
-
-            if (offhanditemstack.getItem() == Items.LAVA_BUCKET) {
-                level.setBlockAndUpdate(pContext.getClickedPos(), Blocks.LAVA.defaultBlockState());
-                level.playSound(null, pContext.getClickedPos(), SoundEvents.BUCKET_EMPTY_LAVA, SoundSource.BLOCKS);
-
-                return InteractionResult.SUCCESS;
-            }
-
+            return InteractionResult.SUCCESS;
         }
-
 
         return InteractionResult.FAIL;
     }
-    */
+
 
     @Override
-    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
-        if(Screen.hasShiftDown()) {
+    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag)
+    {
+        if (Screen.hasShiftDown())
+        {
             pTooltipComponents.add(Component.translatable("toolip.laicaps.chisel.shift_down"));
-        } else {
+        } else
+        {
             pTooltipComponents.add(Component.translatable("toolip.laicaps.chisel"));
         }
 
-        if(pStack.get(ModDataComponentTypes.COORDINATES.get()) != null)
+        if (pStack.get(ModDataComponentTypes.COORDINATES.get()) != null)
         {
             pTooltipComponents.add(Component.literal("Last Block Clicked at " + pStack.get(ModDataComponentTypes.COORDINATES.get())));
         }

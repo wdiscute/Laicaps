@@ -22,7 +22,6 @@ public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEnt
     public void setDirection(Direction dir)
     {
         directionBeingChanged = dir;
-        //setChanged();
     }
 
 

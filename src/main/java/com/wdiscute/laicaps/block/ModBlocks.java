@@ -178,6 +178,18 @@ public class ModBlocks
             );
 
 
+    public static final RegistryObject<Block> SYMBOL_PUZZLE_BLOCK_INACTIVE =
+            registryObject("symbol_puzzle_block_inactive", () ->
+                    new SymbolPuzzleBlockInactive(BlockBehaviour.Properties.of()
+                            .strength(30)
+                    )
+            );
+
+
+
+
+
+
 
 
 

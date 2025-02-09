@@ -1,36 +1,26 @@
 package com.wdiscute.laicaps.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import com.wdiscute.component.ModDataComponentTypes;
-import com.wdiscute.laicaps.block.ModBlockEntity;
-import com.wdiscute.laicaps.block.ModBlocks;
-import com.wdiscute.laicaps.blockentity.ReceiverBlockEntity;
-import com.wdiscute.laicaps.blockentity.SymbolPuzzleBlockEntity;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jetbrains.annotations.Nullable;
 
-public class SymbolPuzzleBlock extends HorizontalDirectionalBlock implements EntityBlock
+public class SymbolPuzzleBlockInactive extends HorizontalDirectionalBlock
 {
-    public SymbolPuzzleBlock(Properties properties)
+    public SymbolPuzzleBlockInactive(Properties properties)
     {
         super(properties);
     }
+
 
 
     public static final EnumProperty<SymbolsEnum> SYMBOLS = EnumProperty.create("symbol", SymbolsEnum.class);
@@ -53,43 +43,25 @@ public class SymbolPuzzleBlock extends HorizontalDirectionalBlock implements Ent
 
     }
 
-    @Override
-    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult)
-    {
-        if (!pLevel.isClientSide() && pStack.getItem() == ModItems.CHISEL.get())
-        {
-            BlockEntity be = pLevel.getBlockEntity(pPos);
-            if (be instanceof SymbolPuzzleBlockEntity blockEntity)
-            {
-                blockEntity.setBlockLinked(pStack.get(ModDataComponentTypes.COORDINATES.get()));
-                return ItemInteractionResult.SUCCESS;
-            }
-        }
 
-        if (!pLevel.isClientSide())
+    @Override
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult)
+    {
+        if (!pLevel.isClientSide() && pPlayer.getMainHandItem().getItem() == ModItems.CHISEL.get())
         {
             SymbolsEnum next = CycleSymbol(pState.getValue(SYMBOLS));
             pLevel.setBlockAndUpdate(pPos, pState.setValue(SYMBOLS, next));
 
-            BlockEntity be = pLevel.getBlockEntity(pPos);
-            if (be instanceof SymbolPuzzleBlockEntity blockEntity)
-            {
-                if (pLevel.getBlockState(blockEntity.getBlockLinked()).getBlock() == ModBlocks.SYMBOL_PUZZLE_BLOCK_INACTIVE.get())
-                {
-                    System.out.println("worked");
-                }
-            }
         }
-        return ItemInteractionResult.SUCCESS;
+
+        return InteractionResult.SUCCESS;
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext)
     {
-
         this.defaultBlockState().setValue(SYMBOLS, SymbolsEnum.ONE);
         return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
-
     }
 
     @Override
@@ -104,12 +76,8 @@ public class SymbolPuzzleBlock extends HorizontalDirectionalBlock implements Ent
         super.createBlockStateDefinition(pBuilder);
         pBuilder.add(SYMBOLS);
         pBuilder.add(FACING);
+
     }
 
 
-    @Override
-    public @Nullable BlockEntity newBlockEntity(BlockPos pPos, BlockState pState)
-    {
-        return ModBlockEntity.SYMBOL_PUZZLE_BLOCK.get().create(pPos, pState);
-    }
 }

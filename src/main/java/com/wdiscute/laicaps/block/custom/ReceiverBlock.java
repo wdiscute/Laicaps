@@ -182,6 +182,7 @@ public class ReceiverBlock extends Block implements EntityBlock
                 if (dir2 == Direction.EAST) blockEntity.setDirection(Direction.NORTH);
 
                 pPlayer.sendSystemMessage(Component.literal("direction changed to " + blockEntity.getDirection()));
+                return ItemInteractionResult.SUCCESS;
             }
 
             if (pPlayer.getMainHandItem().getItem() == ModItems.CHISEL.get())
@@ -196,11 +197,10 @@ public class ReceiverBlock extends Block implements EntityBlock
                     pLevel.setBlockAndUpdate(pPos, pState.setValue(EAST_ENABLED, !pState.getValue(EAST_ENABLED)));
 
                 pPlayer.sendSystemMessage(Component.literal("flipped " + blockEntity.getDirection()));
+                return ItemInteractionResult.SUCCESS;
             }
-
-
         }
-        return ItemInteractionResult.SUCCESS;
+        return ItemInteractionResult.FAIL;
     }
 
     public ReceiverBlock(Properties properties)
