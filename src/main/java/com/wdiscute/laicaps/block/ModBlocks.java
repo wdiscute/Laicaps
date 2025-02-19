@@ -3,6 +3,7 @@ package com.wdiscute.laicaps.block;
 import com.wdiscute.laicaps.Laicaps;
 import com.wdiscute.laicaps.block.custom.*;
 import com.wdiscute.laicaps.item.ModItems;
+import com.wdiscute.laicaps.sound.ModSounds;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -153,6 +154,7 @@ public class ModBlocks
             registryObject("sender_puzzle_block", () ->
                     new SenderPuzzleBLock(BlockBehaviour.Properties.of()
                             .strength(30)
+                            .sound(ModSounds.MAGIC_BLOCK_SOUNDS)
                     )
             );
 
@@ -160,6 +162,7 @@ public class ModBlocks
             registryObject("receiver_block", () ->
                     new ReceiverBlock(BlockBehaviour.Properties.of()
                             .strength(30)
+                            .sound(ModSounds.MAGIC_BLOCK_SOUNDS)
                     )
             );
 
@@ -167,6 +170,7 @@ public class ModBlocks
             registryObject("symbol_puzzle_block", () ->
                     new SymbolPuzzleBlock(BlockBehaviour.Properties.of()
                             .strength(30)
+                            .sound(ModSounds.MAGIC_BLOCK_SOUNDS)
                     )
             );
 
@@ -174,6 +178,7 @@ public class ModBlocks
             registryObject("symbol_controller_block", () ->
                     new SymbolControllerBlock(BlockBehaviour.Properties.of()
                             .strength(30)
+                            .sound(ModSounds.MAGIC_BLOCK_SOUNDS)
                     )
             );
 
@@ -182,6 +187,7 @@ public class ModBlocks
             registryObject("symbol_puzzle_block_inactive", () ->
                     new SymbolPuzzleBlockInactive(BlockBehaviour.Properties.of()
                             .strength(30)
+                            .sound(ModSounds.MAGIC_BLOCK_SOUNDS)
                     )
             );
 

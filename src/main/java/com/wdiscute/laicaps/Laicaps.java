@@ -6,6 +6,7 @@ import com.wdiscute.laicaps.block.ModBlockEntity;
 import com.wdiscute.laicaps.block.ModBlocks;
 import com.wdiscute.laicaps.item.ModCreativeModeTabs;
 import com.wdiscute.laicaps.item.ModItems;
+import com.wdiscute.laicaps.sound.ModSounds;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -41,6 +42,8 @@ public class Laicaps
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModDataComponentTypes.register(modEventBus);
+        ModSounds.register(modEventBus);
+
         ModBlockEntity.BLOCK_ENTITIES.register(modEventBus);
 
 

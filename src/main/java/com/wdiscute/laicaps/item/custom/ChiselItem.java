@@ -3,6 +3,7 @@ package com.wdiscute.laicaps.item.custom;
 import com.wdiscute.component.ModDataComponentTypes;
 import com.wdiscute.laicaps.block.ModBlocks;
 import com.wdiscute.laicaps.item.ModItems;
+import com.wdiscute.laicaps.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
@@ -48,6 +49,7 @@ public class ChiselItem extends Item
         if (!level.isClientSide() && pContext.getPlayer().isCrouching())
         {
             pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
+            level.playSound(null, pContext.getClickedPos(), ModSounds.CHISEL_USE.get(), SoundSource.BLOCKS);
             return InteractionResult.SUCCESS;
         }
 
