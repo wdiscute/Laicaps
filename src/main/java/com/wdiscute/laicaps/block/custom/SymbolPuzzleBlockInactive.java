@@ -25,6 +25,7 @@ public class SymbolPuzzleBlockInactive extends HorizontalDirectionalBlock
 
     public static final EnumProperty<SymbolsEnum> SYMBOLS = EnumProperty.create("symbol", SymbolsEnum.class);
 
+
     private static SymbolsEnum CycleSymbol(SymbolsEnum sym)
     {
 

@@ -8,6 +8,8 @@ import com.wdiscute.laicaps.blockentity.ReceiverBlockEntity;
 import com.wdiscute.laicaps.blockentity.SymbolPuzzleBlockEntity;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
@@ -21,8 +23,10 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 public class SymbolPuzzleBlock extends HorizontalDirectionalBlock implements EntityBlock
@@ -34,6 +38,25 @@ public class SymbolPuzzleBlock extends HorizontalDirectionalBlock implements Ent
 
 
     public static final EnumProperty<SymbolsEnum> SYMBOLS = EnumProperty.create("symbol", SymbolsEnum.class);
+    public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom)
+    {
+        if (pState.getValue(ACTIVE))
+        {
+            pLevel.addParticle(
+                    new DustParticleOptions(new Vec3(0.557f, 0.369f, 0.961f).toVector3f(), 3.0F){},
+                    (double) pPos.getX() + 0.5f,
+                    (double) pPos.getY() + 1.2f,
+                    (double) pPos.getZ() + 0.5f,
+                    3.0,
+                    3.0,
+                    3.0
+            );
+        }
+    }
+
 
     private static SymbolsEnum CycleSymbol(SymbolsEnum sym)
     {
@@ -69,28 +92,39 @@ public class SymbolPuzzleBlock extends HorizontalDirectionalBlock implements Ent
         if (!pLevel.isClientSide())
         {
             SymbolsEnum next = CycleSymbol(pState.getValue(SYMBOLS));
-            pLevel.setBlockAndUpdate(pPos, pState.setValue(SYMBOLS, next));
+            pState = pState.setValue(SYMBOLS, next);
 
             BlockEntity be = pLevel.getBlockEntity(pPos);
             if (be instanceof SymbolPuzzleBlockEntity blockEntity)
             {
                 if (pLevel.getBlockState(blockEntity.getBlockLinked()).getBlock() == ModBlocks.SYMBOL_PUZZLE_BLOCK_INACTIVE.get())
                 {
-                    System.out.println("worked");
+                    SymbolsEnum symbollinked = pLevel.getBlockState(blockEntity.getBlockLinked()).getValue(SymbolPuzzleBlockInactive.SYMBOLS);
+                    if (pState.getValue(SYMBOLS) == symbollinked)
+                    {
+                        System.out.println("True and real");
+                        pState = pState.setValue(ACTIVE, true);
+                        pLevel.setBlockAndUpdate(pPos, pState);
+                        return ItemInteractionResult.SUCCESS;
+                    }
                 }
             }
+            pState = pState.setValue(ACTIVE, false);
         }
+        //always returns success
+        pLevel.setBlockAndUpdate(pPos, pState);
         return ItemInteractionResult.SUCCESS;
     }
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext pContext)
     {
-
-        this.defaultBlockState().setValue(SYMBOLS, SymbolsEnum.ONE);
-        return this.defaultBlockState().setValue(FACING, pContext.getHorizontalDirection().getOpposite());
-
+        BlockState bs = defaultBlockState().setValue(ACTIVE, false);
+        bs = bs.setValue(SYMBOLS, SymbolsEnum.TWO);
+        bs = bs.setValue(FACING, pContext.getHorizontalDirection().getOpposite());
+        return bs;
     }
+
 
     @Override
     protected MapCodec<? extends HorizontalDirectionalBlock> codec()
@@ -104,6 +138,7 @@ public class SymbolPuzzleBlock extends HorizontalDirectionalBlock implements Ent
         super.createBlockStateDefinition(pBuilder);
         pBuilder.add(SYMBOLS);
         pBuilder.add(FACING);
+        pBuilder.add(ACTIVE);
     }
 
 

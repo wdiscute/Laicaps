@@ -2,6 +2,7 @@ package com.wdiscute.laicaps.block;
 
 import com.wdiscute.laicaps.Laicaps;
 import com.wdiscute.laicaps.blockentity.ReceiverBlockEntity;
+import com.wdiscute.laicaps.blockentity.SymbolControllerBlockEntity;
 import com.wdiscute.laicaps.blockentity.SymbolPuzzleBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -21,6 +22,8 @@ public class ModBlockEntity
             () -> BlockEntityType.Builder.of(SymbolPuzzleBlockEntity::new, ModBlocks.SYMBOL_PUZZLE_BLOCK.get())
                     .build(null));
 
-
+    public static final RegistryObject<BlockEntityType<SymbolControllerBlockEntity>> SYMBOL_CONTROLLER_BLOCK = BLOCK_ENTITIES.register("symbol_controller_block",
+            () -> BlockEntityType.Builder.of(SymbolControllerBlockEntity::new, ModBlocks.SYMBOL_CONTROLLER_BLOCK.get())
+                    .build(null));
 
 }
