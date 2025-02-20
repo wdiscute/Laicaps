@@ -1,11 +1,9 @@
 package com.wdiscute.laicaps.block.custom;
 
-import com.wdiscute.component.ModDataComponentTypes;
+import com.wdiscute.laicaps.component.ModDataComponentTypes;
 import com.wdiscute.laicaps.block.ModBlockEntity;
 import com.wdiscute.laicaps.block.ModBlocks;
-import com.wdiscute.laicaps.blockentity.ReceiverBlockEntity;
 import com.wdiscute.laicaps.blockentity.SymbolControllerBlockEntity;
-import com.wdiscute.laicaps.blockentity.SymbolPuzzleBlockEntity;
 import com.wdiscute.laicaps.blockentity.TickableBlockEntity;
 import com.wdiscute.laicaps.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -13,7 +11,6 @@ import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;

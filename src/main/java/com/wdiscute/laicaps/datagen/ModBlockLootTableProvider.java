@@ -1,4 +1,4 @@
-package com.wdiscute.datagen;
+package com.wdiscute.laicaps.datagen;
 
 import com.wdiscute.laicaps.block.ModBlocks;
 import com.wdiscute.laicaps.item.ModItems;

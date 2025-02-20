@@ -1,4 +1,4 @@
-package com.wdiscute.component;
+package com.wdiscute.laicaps.component;
 
 import com.wdiscute.laicaps.Laicaps;
 import net.minecraft.core.BlockPos;
