@@ -28,12 +28,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
     @Override
     protected void generate() {
 
-        dropSelf(ModBlocks.RECEIVER_BLOCK.get());
-        dropSelf(ModBlocks.SENDER_PUZZLE_BLOCK.get());
-
-
         dropSelf(ModBlocks.RAW_ALEXENDRITE_BLOCK.get());
+
         dropSelf(ModBlocks.MAGIC_BLOCK.get());
+        dropSelf(ModBlocks.SENDER_PUZZLE_BLOCK.get());
+        dropSelf(ModBlocks.RECEIVER_BLOCK.get());
+        dropSelf(ModBlocks.SYMBOL_PUZZLE_BLOCK.get());
+        dropSelf(ModBlocks.SYMBOL_PUZZLE_BLOCK_INACTIVE.get());
+        dropSelf(ModBlocks.SYMBOL_CONTROLLER_BLOCK.get());
 
         dropSelf(ModBlocks.ALEXENDRITE_BLOCK.get());
         dropSelf(ModBlocks.ALEXANDRITE_TRAPDOOR.get());

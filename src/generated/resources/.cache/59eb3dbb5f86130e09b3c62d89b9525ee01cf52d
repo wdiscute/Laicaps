@@ -1,4 +1,4 @@
-// 1.21	2025-01-30T21:25:15.5556424	Loot Tables
+// 1.21.1	2025-02-20T17:10:30.7717073	Loot Tables
 e5cf659738df9bf398e10b577e69fb9bab37a76c data/laicaps/loot_table/blocks/alexandrite_block.json
 989d155d0c7d1a308d6395b95de569e3dfd47cb6 data/laicaps/loot_table/blocks/alexandrite_button.json
 ed03f165c32f6d69eba5c6e9f1db4cf048c22440 data/laicaps/loot_table/blocks/alexandrite_deepslate_ore.json
@@ -14,3 +14,8 @@ b6961fe5e51940524816f538c7abf22d2f392710 data/laicaps/loot_table/blocks/alexandr
 ef83c1473035c80e06d6050e60564b1a33708e7c data/laicaps/loot_table/blocks/alexandrite_wall.json
 a315a582ebe08580c4b584b8d7b7d6d4fe7aa6be data/laicaps/loot_table/blocks/magic_block.json
 70fd50f1535a3f3e911323b8d75871ae75afc1b4 data/laicaps/loot_table/blocks/raw_alexandrite_block.json
+07599c0588a32dfd7f6f490194e46fe3da69e13e data/laicaps/loot_table/blocks/receiver_block.json
+1325550e9a51e3f6617f0730d7c70600dd4500af data/laicaps/loot_table/blocks/sender_puzzle_block.json
+7fd36f9e634246d7b6747db415ce3d8f0016b4f2 data/laicaps/loot_table/blocks/symbol_controller_block.json
+84e86678bcca8ca490b858cd30b97bc42bbc5e34 data/laicaps/loot_table/blocks/symbol_puzzle_block.json
+83624f2a226494c26a4ee67810aae4a2b2c9a373 data/laicaps/loot_table/blocks/symbol_puzzle_block_inactive.json
