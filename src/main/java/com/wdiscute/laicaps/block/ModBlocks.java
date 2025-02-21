@@ -195,7 +195,7 @@ public class ModBlocks
 
     public static final RegistryObject<Block> WALNUL_SAPLING =
             registryObject("walnul_sapling", () ->
-                    new SaplingBlock(ModTreeGrowers.WALNUL, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+                    new ModSaplingBlock(ModTreeGrowers.WALNUL, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.END_STONE));
 
 
 
