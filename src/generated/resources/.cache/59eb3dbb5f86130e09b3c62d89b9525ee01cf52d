@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-20T17:10:30.7717073	Loot Tables
+// 1.21.1	2025-02-21T13:25:21.4691285	Loot Tables
 e5cf659738df9bf398e10b577e69fb9bab37a76c data/laicaps/loot_table/blocks/alexandrite_block.json
 989d155d0c7d1a308d6395b95de569e3dfd47cb6 data/laicaps/loot_table/blocks/alexandrite_button.json
 ed03f165c32f6d69eba5c6e9f1db4cf048c22440 data/laicaps/loot_table/blocks/alexandrite_deepslate_ore.json
@@ -19,3 +19,4 @@ a315a582ebe08580c4b584b8d7b7d6d4fe7aa6be data/laicaps/loot_table/blocks/magic_bl
 7fd36f9e634246d7b6747db415ce3d8f0016b4f2 data/laicaps/loot_table/blocks/symbol_controller_block.json
 84e86678bcca8ca490b858cd30b97bc42bbc5e34 data/laicaps/loot_table/blocks/symbol_puzzle_block.json
 83624f2a226494c26a4ee67810aae4a2b2c9a373 data/laicaps/loot_table/blocks/symbol_puzzle_block_inactive.json
+6ab7337e6f9571e6da88ee6d5ca9fec159cbb67e data/laicaps/loot_table/blocks/walnul_sapling.json

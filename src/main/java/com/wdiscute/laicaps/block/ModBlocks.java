@@ -4,6 +4,7 @@ import com.wdiscute.laicaps.Laicaps;
 import com.wdiscute.laicaps.block.custom.*;
 import com.wdiscute.laicaps.item.ModItems;
 import com.wdiscute.laicaps.sound.ModSounds;
+import com.wdiscute.laicaps.worldgen.tree.ModTreeGrowers;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -192,7 +193,9 @@ public class ModBlocks
             );
 
 
-
+    public static final RegistryObject<Block> WALNUL_SAPLING =
+            registryObject("walnul_sapling", () ->
+                    new SaplingBlock(ModTreeGrowers.WALNUL, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
 
 

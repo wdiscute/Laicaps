@@ -47,6 +47,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         dropSelf(ModBlocks.ALEXANDRITE_STAIRS.get());
 
         dropSelf(ModBlocks.ALEXANDRITE_LAMP.get());
+        dropSelf(ModBlocks.WALNUL_SAPLING.get());
 
 
 

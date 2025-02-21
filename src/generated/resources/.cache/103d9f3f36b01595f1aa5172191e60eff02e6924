@@ -1,4 +1,5 @@
-// 1.21.1	2025-02-20T17:29:01.149782	Registries
+// 1.21.1	2025-02-21T13:25:21.4701252	Registries
 0bac93e193bbffd98d02f3bc53515371cf8c001b data/laicaps/forge/biome_modifier/add_alexandrite_ore.json
 8e6ca6a4671a6e1cda0573db4f4684a362215695 data/laicaps/worldgen/configured_feature/alexandrite_ore.json
+bd917b770c974c4c04f2401ee22422f329741156 data/laicaps/worldgen/configured_feature/walnut.json
 d8f453e817a97c0bf851b5c71d89fad9098324aa data/laicaps/worldgen/placed_feature/alexandrite_ore_placed.json
