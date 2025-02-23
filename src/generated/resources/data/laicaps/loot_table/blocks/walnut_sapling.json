@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "laicaps:walnul_sapling"
+          "name": "laicaps:walnut_sapling"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "laicaps:blocks/walnul_sapling"
+  "random_sequence": "laicaps:blocks/walnut_sapling"
 }

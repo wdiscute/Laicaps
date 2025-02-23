@@ -1,6 +1,7 @@
 package com.wdiscute.laicaps.worldgen;
 
 import com.wdiscute.laicaps.Laicaps;
+import com.wdiscute.laicaps.worldgen.biome.ModBiomes;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -18,6 +19,7 @@ public class ModBiomeModifiers
 
     public static final ResourceKey<BiomeModifier> ADD_ALEXANDRITE_ORE = registerKey("add_alexandrite_ore");
     public static final ResourceKey<BiomeModifier> ADD_WALNUT_TREE = registerKey("add_walnut_tree");
+    public static final ResourceKey<BiomeModifier> ADD_RANDOM_BLOCKS = registerKey("add_random_blocks");
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context)
     {
@@ -37,6 +39,14 @@ public class ModBiomeModifiers
                 HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.WALNUT_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
+
+        /*
+        context.register(ADD_RANDOM_BLOCKS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(Biomes.END_HIGHLANDS), biomes.getOrThrow(Biomes.END_BARRENS)),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.RANDOM_BLOCKS_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        */
 
     }
 

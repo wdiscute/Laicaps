@@ -193,9 +193,11 @@ public class ModBlocks
             );
 
 
-    public static final RegistryObject<Block> WALNUL_SAPLING =
-            registryObject("walnul_sapling", () ->
-                    new ModSaplingBlock(ModTreeGrowers.WALNUL, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.END_STONE));
+    //sapling requires tree grower which is being provided on ModTreeGrowers
+    //we use ModSaplingBlock so we can change what block it can be placed/grown on etc
+    public static final RegistryObject<Block> WALNUT_SAPLING =
+            registryObject("walnut_sapling", () ->
+                    new ModSaplingBlock(ModTreeGrowers.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRASS_BLOCK));
 
 
 

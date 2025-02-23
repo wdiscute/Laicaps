@@ -67,6 +67,7 @@ public class ReceiverBlock extends Block implements EntityBlock
     @Override
     protected void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom)
     {
+        //if(true) return;
         for (int k = 0; k < 4; k++)
         {
             Direction dir = Direction.NORTH;
