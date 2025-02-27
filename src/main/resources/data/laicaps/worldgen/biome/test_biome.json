@@ -1,11 +1,8 @@
 {
   "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:cave_extra_underground",
-      "minecraft:canyon"
-    ]
-  },
+  "air": [
+  ]
+},
   "downfall": 0.8,
   "effects": {
     "fog_color": 15986356,
@@ -56,7 +53,9 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra"
+      "minecraft:ore_gold_extra",
+      "laicaps:oakheart_placed",
+      "laicaps:walnut_placed"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -9,32 +9,30 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
+import java.util.Random;
+
 public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEntity
 {
     private int counter = 0;
-    private Direction directionBeingChanged = Direction.NORTH;
-
-    public Direction getDirection()
-    {
-        return directionBeingChanged;
-    }
-
-    public void setDirection(Direction dir)
-    {
-        directionBeingChanged = dir;
-    }
+    private int tickOffset = 0;
 
 
     @Override
     public void tick()
     {
         if (this.level == null || this.level.isClientSide()) return;
+
+        if(this.tickOffset == 0){
+            this.tickOffset = (int)(Math.random() * 20 + 1);
+        }
         counter++;
-        if (counter % 20 == 0)
+
+        if ((counter + this.tickOffset) % 20 == 0)
         {
             this.level.scheduleTick(this.getBlockPos(), ModBlocks.RECEIVER_BLOCK.get(), 1);
         }
 
+        if(counter > 10000000) counter = 0;
 
     }
 
@@ -44,21 +42,13 @@ public class ReceiverBlockEntity extends BlockEntity implements TickableBlockEnt
         super(ModBlockEntity.RECEIVER_BLOCK.get(), pPos, pBlockState);
     }
 
-    //private int counter;
-    //public int IncrementCounter(){
-    //    ++this.counter;
-    //    setChanged();
-    //    return this.counter;
-    //}
     @Override
     protected void loadAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
-        this.setDirection(Direction.byName(pTag.getString("dir")));
     }
 
     @Override
     protected void saveAdditional(CompoundTag pTag, HolderLookup.Provider pRegistries)
     {
-        pTag.putString("dir", directionBeingChanged.getName());
     }
 }
