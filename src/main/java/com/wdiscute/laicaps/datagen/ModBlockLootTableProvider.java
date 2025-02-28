@@ -49,6 +49,13 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider
         dropSelf(ModBlocks.ALEXANDRITE_LAMP.get());
         dropSelf(ModBlocks.WALNUT_SAPLING.get());
 
+        //oakroot
+        dropSelf(ModBlocks.OAKROOT_LOG.get());
+        dropSelf(ModBlocks.OAKROOT_SAPLING.get());
+        this.add(ModBlocks.OAKROOT_LEAVES.get(),
+                block -> createLeavesDrops(ModBlocks.OAKROOT_LEAVES.get(), ModBlocks.OAKROOT_SAPLING.get()));
+
+        dropSelf(ModBlocks.OAKHEART_SAPLING.get());
 
 
         this.add(ModBlocks.ALEXANDRITE_DOOR.get(),

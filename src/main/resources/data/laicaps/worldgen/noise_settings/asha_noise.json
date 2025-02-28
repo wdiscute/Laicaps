@@ -396,9 +396,20 @@
             "secondary_depth_range": 0
           },
           "then_run": {
-            "type": "minecraft:block",
-            "result_state": {
-              "Name": "minecraft:grass_block"
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:y_above",
+              "anchor": {
+                "absolute": 60
+              },
+              "surface_depth_multiplier": 0,
+              "add_stone_depth": true
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:grass_block"
+              }
             }
           }
         }
@@ -413,9 +424,26 @@
           "secondary_depth_range": 8
         },
         "then_run": {
-          "type": "minecraft:block",
-          "result_state": {
-            "Name": "minecraft:dirt"
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:y_above",
+            "anchor": {
+              "absolute": 59
+            },
+            "surface_depth_multiplier": 0,
+            "add_stone_depth": false
+          },
+          "then_run": {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:above_preliminary_surface"
+            },
+            "then_run": {
+              "type": "minecraft:block",
+              "result_state": {
+                "Name": "minecraft:dirt"
+              }
+            }
           }
         }
       }

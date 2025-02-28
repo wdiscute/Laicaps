@@ -1,5 +1,6 @@
 package com.wdiscute.laicaps.block;
 
+import com.mojang.serialization.MapCodec;
 import com.wdiscute.laicaps.Laicaps;
 import com.wdiscute.laicaps.block.custom.*;
 import com.wdiscute.laicaps.item.ModItems;
@@ -200,19 +201,41 @@ public class ModBlocks
                     new ModSaplingBlock(ModTreeGrowers.WALNUT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRASS_BLOCK));
 
 
-    public static final RegistryObject<Block> OAKHEART_SAPLING =
-            registryObject("oakheart_sapling", () ->
-                    new ModSaplingBlock(ModTreeGrowers.OAKHEART, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRASS_BLOCK));
-
-
     public static final RegistryObject<Block> OAKROOT_SAPLING =
             registryObject("oakroot_sapling", () ->
                     new ModSaplingBlock(ModTreeGrowers.OAKROOT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRASS_BLOCK));
 
+    public static final RegistryObject<Block> OAKROOT_LEAVES =
+            registryObject("oakroot_leaves", () ->
+                    new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)));
+
+    public static final RegistryObject<Block> OAKROOT_LOG =
+            registryObject("oakroot_log", () ->
+                     new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                             .sound(SoundType.WOOD)
+                             .strength(2.0F)
+                             .ignitedByLava()
+                     ));
 
 
 
 
+
+    public static final RegistryObject<Block> OAKHEART_SAPLING =
+            registryObject("oakheart_sapling", () ->
+                    new ModSaplingBlock(ModTreeGrowers.OAKHEART, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRASS_BLOCK));
+
+    public static final RegistryObject<Block> OAKHEART_LEAVES =
+            registryObject("oakheart_leaves", () ->
+                    new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_LEAVES)));
+
+    public static final RegistryObject<Block> OAKHEART_LOG =
+            registryObject("oakheart_log", () ->
+                    new RotatedPillarBlock(BlockBehaviour.Properties.of()
+                            .sound(SoundType.WOOD)
+                            .strength(2.0F)
+                            .ignitedByLava()
+                    ));
 
 
 

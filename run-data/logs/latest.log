@@ -1,29 +1,14 @@
-[23Feb2025 00:42:34.381] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\lucas\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, laicaps, --all, --output, C:\Users\lucas\Desktop\Laicaps\src\generated\resources, --existing, C:\Users\lucas\Desktop\Laicaps\src\main\resources]
-[23Feb2025 00:42:34.383] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.5+11-LTS
-[23Feb2025 00:42:34.384] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.4 starting: java version 21.0.5 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
-[23Feb2025 00:42:34.441] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
-[23Feb2025 00:42:34.491] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/lucas/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
-[23Feb2025 00:42:34.968] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[23Feb2025 00:42:35.302] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\lucas\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, laicaps, --all, --output, C:\Users\lucas\Desktop\Laicaps\src\generated\resources, --existing, C:\Users\lucas\Desktop\Laicaps\src\main\resources]
-[23Feb2025 00:42:37.688] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 52.0.53, for MC 1.21.1 with MCP 20240808.132146
-[23Feb2025 00:42:37.689] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v52.0.53 Initialized
-[23Feb2025 00:42:37.703] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
-[23Feb2025 00:42:37.882] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [laicaps]
-[23Feb2025 00:42:37.918] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/lucas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
-[23Feb2025 00:42:37.919] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/lucas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
-[23Feb2025 00:42:37.993] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[23Feb2025 00:42:38.083] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 89 ms
-[23Feb2025 00:42:38.083] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[23Feb2025 00:42:38.103] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 19 ms
-[23Feb2025 00:42:38.103] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[23Feb2025 00:42:38.144] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 39 ms
-[23Feb2025 00:42:38.144] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id laicaps
-[23Feb2025 00:42:38.146] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id laicaps finished after 3 ms
-[23Feb2025 00:42:38.146] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id laicaps
-[23Feb2025 00:42:38.148] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id laicaps finished after 1 ms
-[23Feb2025 00:42:38.148] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: laicaps
-[23Feb2025 00:42:38.151] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: laicaps finished after 2 ms
-[23Feb2025 00:42:38.151] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: laicaps
-[23Feb2025 00:42:38.216] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: laicaps finished after 64 ms
-[23Feb2025 00:42:38.216] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 223 ms
-[23Feb2025 00:42:38.220] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 132, old count: 132, new count: 133, removed stale: 0, written: 0
+[28Feb2025 14:07:16.151] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forge_userdev_data, --assetIndex, 17, --assetsDir, C:\Users\lucas\.gradle\caches\forge_gradle\assets, --gameDir, ., --mod, laicaps, --all, --output, C:\Users\lucas\Desktop\Laicaps\src\generated\resources, --existing, C:\Users\lucas\Desktop\Laicaps\src\main\resources]
+[28Feb2025 14:07:16.153] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.5+11-LTS
+[28Feb2025 14:07:16.154] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.2.4 starting: java version 21.0.5 by Eclipse Adoptium; OS Windows 10 arch amd64 version 10.0
+[28Feb2025 14:07:16.218] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forge_userdev_data
+[28Feb2025 14:07:16.274] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=jar:file:///C:/Users/lucas/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.7/8ab114ac385e6dbdad5efafe28aba4df8120915f/mixin-0.8.7.jar!/ Service=ModLauncher Env=UNKNOWN
+[28Feb2025 14:07:16.796] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[28Feb2025 14:07:17.236] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forge_userdev_data' with arguments [--gameDir, ., --assetsDir, C:\Users\lucas\.gradle\caches\forge_gradle\assets, --assetIndex, 17, --mod, laicaps, --all, --output, C:\Users\lucas\Desktop\Laicaps\src\generated\resources, --existing, C:\Users\lucas\Desktop\Laicaps\src\main\resources]
+[28Feb2025 14:07:19.736] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 52.0.53, for MC 1.21.1 with MCP 20240808.132146
+[28Feb2025 14:07:19.736] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v52.0.53 Initialized
+[28Feb2025 14:07:19.755] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Opening jdk.naming.dns/com.sun.jndi.dns to java.naming
+[28Feb2025 14:07:19.927] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [laicaps]
+[28Feb2025 14:07:19.960] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/lucas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/assets/.mcassetsroot' uses unexpected schema
+[28Feb2025 14:07:19.960] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/lucas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1/forge-1.21.1-52.0.53_mapped_parchment_2024.11.17-1.21.1-recomp.jar%230!/data/.mcassetsroot' uses unexpected schema
+[28Feb2025 14:07:20.048] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
