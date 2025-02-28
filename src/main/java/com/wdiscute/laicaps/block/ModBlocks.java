@@ -205,6 +205,9 @@ public class ModBlocks
                     new ModSaplingBlock(ModTreeGrowers.OAKHEART, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRASS_BLOCK));
 
 
+    public static final RegistryObject<Block> OAKROOT_SAPLING =
+            registryObject("oakroot_sapling", () ->
+                    new ModSaplingBlock(ModTreeGrowers.OAKROOT, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRASS_BLOCK));
 
 
 

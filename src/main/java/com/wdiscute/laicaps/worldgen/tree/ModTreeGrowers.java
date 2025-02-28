@@ -15,5 +15,8 @@ public class ModTreeGrowers
     public static final TreeGrower OAKHEART = new TreeGrower(Laicaps.MOD_ID + ":oakheart",
             Optional.empty(), Optional.of(ModConfiguredFeatures.OAKHEART_KEY), Optional.empty());
 
+    public static final TreeGrower OAKROOT = new TreeGrower(Laicaps.MOD_ID + ":oakroot",
+            Optional.empty(), Optional.of(ModConfiguredFeatures.OAKROOT_KEY), Optional.empty());
+
 
 }
